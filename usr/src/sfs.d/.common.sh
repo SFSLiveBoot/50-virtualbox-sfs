@@ -1,6 +1,6 @@
 : ${lbu:=/opt/LiveBootUtils}
 
-: ${dist:=jessie}
+: ${dist:=$(awk '/^deb /{print $3}' /etc/apt/sources.list | head -1)}
 : ${debarch:=$(dpkg --print-architecture)}
 
 : ${repo:=http://download.virtualbox.org/virtualbox/debian}
