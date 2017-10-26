@@ -64,4 +64,15 @@ EOF
   mkdir -p "$DESTDIR/var/lib/dkms/vboxhost/$mod_ver/build"
   ln -s "/usr/src/$mod_name" "$DESTDIR/var/lib/dkms/vboxhost/$mod_ver/source"
 }
+
+if test -n "$ORACLE_EXT_PACK";then
+  echo -n "Installing $ORACLE_EXT_PACK .. "
+  ext_dir="$DESTDIR/usr/lib/virtualbox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack"
+  mkdir -p "$ext_dir"
+  tar xfz "$ORACLE_EXT_PACK" --no-same-owner -C "$ext_dir"
+  echo "Done."
+else
+  echo "If you accept Oracle Extension Pack PUEL, you can set ORACLE_EXT_PACK env var to downloaded extpack file"
+fi
+
 echo "Ok."
