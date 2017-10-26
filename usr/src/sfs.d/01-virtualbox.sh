@@ -19,14 +19,14 @@ test ! -d "$DESTDIR/lib/modules" || {
 }
 
 echo -n "Setting suid permissions.. "
-find "$DESTDIR/usr/lib/virtualbox" \
+find "$DESTDIR/usr/lib/virtualbox" \( \
   -name VBoxHeadless -o \
   -name VBoxNetAdpCtl -o \
   -name VBoxNetDHCP -o \
   -name VBoxNetNAT -o \
   -name VBoxSDL -o \
   -name VBoxVolInfo -o \
-  -name VirtualBox \
+  -name VirtualBox \) \
   -exec chmod -v 4511 {} +
 echo "Ok."
 
