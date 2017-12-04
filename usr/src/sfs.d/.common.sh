@@ -4,7 +4,7 @@
 : ${debarch:=$(dpkg --print-architecture)}
 
 : ${repo:=http://download.virtualbox.org/virtualbox/debian}
-: ${package_name:=virtualbox-5.1}
+: ${package_name:=virtualbox-5.2}
 : ${packages_url:=$repo/dists/$dist/contrib/binary-$debarch/Packages.gz}
 
 latest_ver() {
