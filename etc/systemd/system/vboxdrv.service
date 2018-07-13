@@ -1,3 +1,6 @@
+[Unit]
+Wants=vboxdrv-setup.service
+
 [Service]
 Type=oneshot
 ExecStart=/bin/sh /usr/lib/virtualbox/vboxdrv.sh start

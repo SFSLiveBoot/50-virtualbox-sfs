@@ -1,0 +1,7 @@
+[Unit]
+ConditionPathExists=!/lib/modules/%v/misc/vboxdrv.ko
+Before=vboxdrv.service
+
+[Service]
+ExecStart=/bin/sh /usr/lib/virtualbox/vboxdrv.sh setup
+Type=oneshot
