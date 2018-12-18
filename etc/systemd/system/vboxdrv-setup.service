@@ -3,5 +3,6 @@ ConditionPathExists=!/lib/modules/%v/misc/vboxdrv.ko
 Before=vboxdrv.service
 
 [Service]
+ExecStartPre=/bin/sh -c 'getent group vboxusers >/dev/null || groupadd -r vboxusers'
 ExecStart=/bin/sh /usr/lib/virtualbox/vboxdrv.sh setup
 Type=oneshot
