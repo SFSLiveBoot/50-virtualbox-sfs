@@ -14,6 +14,7 @@ for solib in $(find "$DESTDIR/usr/lib/virtualbox" -mindepth 1 -maxdepth 1 -type 
     case "$solib" in
       libQt5OpenGL.so.5) add_dpkg="${add_dpkg:+$add_dpkg }libqt5opengl5" ;;
       libQtOpenGL.so.4) add_dpkg="${add_dpkg:+$add_dpkg }libqt4-opengl" ;;
+      libQt5Help.so.5) add_dpkg="${add_dpkg:+$add_dpkg }libqt5help5" ;;
       *) echo "Warning: Library '$solib' not found (unknown package)" >&2 ;;
     esac
   fi
